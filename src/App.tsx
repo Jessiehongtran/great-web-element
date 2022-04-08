@@ -1,12 +1,14 @@
 import React from 'react';
-import './App.css';
 import Wiki from './components/wiki';
+import Products from './views/products';
+import Profiles from './views/profile-shift';
 
 function App() {
   return (
     <div className="App">
-      <p>Here I will create everything about web</p>
       <Wiki />
+      <Products />
+      <Profiles />
     </div>
   );
 }
