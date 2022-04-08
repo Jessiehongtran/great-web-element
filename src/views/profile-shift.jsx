@@ -21,25 +21,36 @@ export default class Profiles extends React.Component {
                     title: "Project Consultant 3"
                 }
             ],
-            ind: 0
+            ind: 0,
+            updating: false
         }
     }
 
     render(){
 
+        console.log('rendering', this.state.ind)
+
         setTimeout(function(){
-            if (this.state.ind + 1 < this.state.profiles.length){
-                this.setState({ind: this.state.ind + 1})
-            } else {
-                this.setState({ind: 0})
+
+            if (!this.state.updating){
+                if (this.state.ind + 1 < this.state.profiles.length){
+                    this.setState({ind: this.state.ind + 1, updating: true })
+                } else {
+                    this.setState({ind: 0, updating: true})
+                }
             }
             
         }.bind(this), 5000)
+
+        setTimeout(function(){
+            this.setState({ updating: false })
+        }.bind(this), 8000)
 
         let person = this.state.profiles[this.state.ind]
 
         return (
             <div className="profiles" style={{ padding: '0 20px' }} >
+                {/* {function(){ console.log('ble'); this.setState({updating: false})}} */}
                 <div className="each-profile" style={{ display: 'flex', alignItems: 'center' }}>
                     <img style={{ borderRadius: '50%', width: '60px', height: '60px', marginRight: '20px' }} src={person.avatar} />
                     <div>
