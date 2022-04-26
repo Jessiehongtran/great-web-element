@@ -28,23 +28,22 @@ export default class Profiles extends React.Component {
 
     render(){
 
-        console.log('rendering', this.state.ind)
 
-        setTimeout(function(){
+        // setTimeout(function(){
 
-            if (!this.state.updating){
-                if (this.state.ind + 1 < this.state.profiles.length){
-                    this.setState({ind: this.state.ind + 1, updating: true })
-                } else {
-                    this.setState({ind: 0, updating: true})
-                }
-            }
+        //     if (!this.state.updating){
+        //         if (this.state.ind + 1 < this.state.profiles.length){
+        //             this.setState({ind: this.state.ind + 1, updating: true })
+        //         } else {
+        //             this.setState({ind: 0, updating: true})
+        //         }
+        //     }
             
-        }.bind(this), 5000)
+        // }.bind(this), 5000)
 
-        setTimeout(function(){
-            this.setState({ updating: false })
-        }.bind(this), 8000)
+        // setTimeout(function(){
+        //     this.setState({ updating: false })
+        // }.bind(this), 8000)
 
         let person = this.state.profiles[this.state.ind]
 
