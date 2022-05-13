@@ -7,7 +7,7 @@ import ResponsivePage from './views/responsive-page';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ padding: '20px'}}>
       <Wiki />
       <Products />
       <Profiles />

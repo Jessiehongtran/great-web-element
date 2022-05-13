@@ -13,7 +13,7 @@ export default class Wiki extends React.Component {
 
     render(){
         return (
-            <div style={{ display: 'flex', marginLeft: '20px', marginTop: '20px' }}>
+            <div style={{ display: 'flex',  margin: '20px 0' }}>
                 <div style={{ border: '1px solid #DDDDDD', borderRadius: '8px' }}>
                     <div style={{ borderBottom: '1px solid #DDDDDD', padding: '15px', fontWeight: 500, fontSize: '18px' }}>See results about</div>
                     <div style={{ display: 'flex',padding: '0px 15px', alignItems: 'center' }}>

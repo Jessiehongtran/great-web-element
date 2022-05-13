@@ -13,7 +13,7 @@ export default class Product extends React.Component {
         const { product } = this.props;
 
         return (
-            <div className="product-container" style={{ width: '200px', margin: '20px'}}>
+            <div className="product-container" style={{ width: '200px'}}>
                 <div className="product-image" style={{ width: '100%', display: 'flex', justifyContent: 'center', border: '1px solid silver', borderRadius: '10px'}}>
                     <img src="https://res.cloudinary.com/dfulxq7so/image/upload/v1647694227/Rectangle_105_fbxny5.svg" />
                 </div>

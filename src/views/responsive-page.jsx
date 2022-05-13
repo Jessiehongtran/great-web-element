@@ -8,8 +8,10 @@ export default class ResponsivePage extends React.Component {
 
     render(){
         return (
-            <div>
+            <div style={{background: '#FFF4E3', padding: '40px', borderRadius: '14px' }}>
+                <div className="wrapper" style={{overflow: 'hidden'}}>
                 <Reviews />
+                </div>
             </div>
         )
     }

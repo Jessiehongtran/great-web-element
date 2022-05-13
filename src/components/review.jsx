@@ -11,11 +11,11 @@ export default class Review extends React.Component {
         const { review } = this.props;
 
         return (
-            <div>
+            <div style={{background: '#fff', margin: '10px', padding: '30px', minWidth: '500px', borderRadius: '12px' }}>
                 <div>Stars</div>
                 <h1>{review.title}</h1>
                 <p>{review.content}</p>
-                <div class="small-details" style={{ display: 'flex',}}>
+                <div class="small-details" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
                     <div class="author-source">
                         <p>{review.author}</p>
                         <p>{review.author_address}</p>
