@@ -10,7 +10,7 @@ export default class Reviews extends React.Component {
 
     render(){
         return (
-            <div style={{display: 'flex'}}>
+            <div style={{display: 'flex' }}>
                 {reviews.map(eachReview => <Review review={eachReview} />)}
             </div>
         )
