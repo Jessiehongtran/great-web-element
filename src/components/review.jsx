@@ -7,41 +7,39 @@ export default class Review extends React.Component {
         super(props);
         this.state = {
             turn: false,
-            x: 0
+            x: this.props.x
+        }
+        this.moveLeft = this.moveLeft.bind(this);
+    }
+
+    componentDidMount(){
+        this.moveLeft()
+    }
+
+    moveLeft() {
+        const speed = 1;
+        const durationToNextItem = 0;
+
+        if (this.state.x > -1000) {
+            this.setState({x: this.state.x - speed})
+        } else {
+            this.setState({x: 900})
         }
 
+        setTimeout(this.moveLeft, durationToNextItem);
     }
 
     render(){
 
         const { review } = this.props;
         let cardWidth = 500;
-        // setTimeout(function(){
-        //     if (this.state.x < -cardWidth){
-        //         this.setState({turn: true})
-        //     } else {
-        //         this.setState({turn: false})
-        //     }
-
-        //     if (this.state.turn){
-        //         this.setState({x: 1000})
-        //     } else {
-        //         this.setState({x: this.state.x - 10})
-        //     }
-        // }.bind(this), 500)
-
-        // setTimeout(function(){
-        //     this.setState({x: this.state.x - 10})
-        //     console.log(this.state.x)
-        // }.bind(this), 500)
+        let { x } = this.props;
         const fullStarNum = Math.floor(review.rating)
         const fullStars = Array.apply(0, Array(fullStarNum));
         const halfStars = Array.apply(0, Array(5 - fullStarNum))
-
-        console.log(fullStars)
        
         return (
-            <div style={{ margin: '10px', padding: '30px', width: `${cardWidth}px`, borderRadius: '12px', position: 'absolute', left: `${(review.id-1)*cardWidth*1.2+40+ this.state.x}px`, top: '0px', border: '1px solid black' }}>
+            <div style={{ margin: '10px', padding: '30px', width: `${cardWidth}px`, borderRadius: '12px', position: 'absolute', left: `${this.state.x}px`, top: '0px', border: '1px solid black' }}>
                 <div className="stars">
                     {fullStars.map(star => <FontAwesomeIcon icon={faStar} style={{color: 'orange'}}/>)}
                     {halfStars.map(star => <FontAwesomeIcon icon={faStarHalf} style={{color: 'orange'}} />)}
