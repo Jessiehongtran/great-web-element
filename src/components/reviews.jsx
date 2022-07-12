@@ -17,9 +17,9 @@ export default class Reviews extends React.Component {
         let cardWidth = 500;
 
         return (
-            <div style={{  }}>
+            <div>
                 <div style={{ display: 'flex' }}>
-                {reviews.map((eachReview,i) => <Review review={eachReview} x={(i-1)*cardWidth*1.2+40+ x} />)}
+                {reviews.map((eachReview,i) => <Review review={eachReview} x={(i-1)*cardWidth*1.2+40+ x} cardWidth={cardWidth} totalReviews={reviews.length} />)}
                 </div>
             </div>
         )

@@ -28,5 +28,15 @@ export const reviews = [
         author_address: "San Francisco",
         review_source: "Yelp",
         link_to_review: ""
+    },
+    {
+        id: 4,
+        rating: 3,
+        title: "It's okay, not bad",
+        content: "I contacted them to rebuild my bathroom but the design was not what I expected the best to be",
+        author: "John",
+        author_address: "Los Angeles",
+        review_source: "Yelp",
+        link_to_review: ""
     }
 ]

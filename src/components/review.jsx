@@ -19,9 +19,11 @@ export default class Review extends React.Component {
     moveLeft() {
         const speed = 1;
         const durationToNextItem = 0;
+        const { x } = this.state;
+        const { cardWidth, totalReviews } = this.props;
 
-        if (this.state.x > -1000) {
-            this.setState({x: this.state.x - speed})
+        if (x > - cardWidth*(totalReviews - 1)) {
+            this.setState({x: x - speed})
         } else {
             this.setState({x: 900})
         }
@@ -31,15 +33,14 @@ export default class Review extends React.Component {
 
     render(){
 
-        const { review } = this.props;
-        let cardWidth = 500;
-        let { x } = this.props;
+        const { x } = this.state;
+        const { review, cardWidth } = this.props;
         const fullStarNum = Math.floor(review.rating)
         const fullStars = Array.apply(0, Array(fullStarNum));
         const halfStars = Array.apply(0, Array(5 - fullStarNum))
        
         return (
-            <div style={{ margin: '10px', padding: '30px', width: `${cardWidth}px`, borderRadius: '12px', position: 'absolute', left: `${this.state.x}px`, top: '0px', border: '1px solid black' }}>
+            <div style={{ margin: '10px', padding: '30px', width: `${cardWidth}px`, borderRadius: '12px', position: 'absolute', left: `${x}px`, top: '0px', border: '1px solid black' }}>
                 <div className="stars">
                     {fullStars.map(star => <FontAwesomeIcon icon={faStar} style={{color: 'orange'}}/>)}
                     {halfStars.map(star => <FontAwesomeIcon icon={faStarHalf} style={{color: 'orange'}} />)}
