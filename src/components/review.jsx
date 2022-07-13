@@ -17,7 +17,7 @@ export default class Review extends React.Component {
     }
 
     moveLeft() {
-        const speed = 1;
+        const speed = 0.8;
         const durationToNextItem = 0;
         const { x } = this.state;
         const { cardWidth, totalReviews } = this.props;
