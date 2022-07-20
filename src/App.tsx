@@ -1,23 +1,15 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import Wiki from './components/wiki';
-import Products from './views/products';
-import Profiles from './views/profile-shift';
-import ProductDetail from './views/product-detail';
-import ResponsivePage from './views/responsive-page';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './views/home';
 import Estate from './views/estate';
 
 function App() {
   return (
     <Router>
-      <div className="App" style={{ padding: '20px'}}>
-        <Wiki />
-        <Products />
-        <Profiles />
-        <ProductDetail />
-        <ResponsivePage />
-        <Estate />
-      </div>
+        <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/estate" element={<Estate/>} />
+        </Routes>
     </Router>
   );
 }

@@ -10,7 +10,9 @@ export default class EstateUtility extends React.Component {
 
     render () {
         return (
-            <div></div>
+            <div style={{ width: '200px' }}>
+
+            </div>
         )
     }
 }

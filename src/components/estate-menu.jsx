@@ -1,52 +1,46 @@
 import React from 'react';
 import EstateEachNav from './estate-each-nav';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSign, faChartLine, faEye, faComment, faAddressCard, faWallet, faChartArea, faCog, faQuestion } from '@fortawesome/free-solid-svg-icons'
 
 const navs = [
     {
-        iconUrl: "",
-        iconAlt: "",
+        icon: faChartLine ,
         navText: "Dashboard",
         navLink: ""
     },
     {
-        iconUrl: "",
-        iconAlt: "",
+        icon: faEye,
         navText: "Discover",
         navLink: ""
     },
     {
-        iconUrl: "",
-        iconAlt: "",
+        icon: faComment,
         navText: "Messages",
         navLink: ""
     },
     {
-        iconUrl: "",
-        iconAlt: "",
+        icon: faAddressCard,
         navText: "Profile",
         navLink: ""
     },
     {
-        iconUrl: "",
-        iconAlt: "",
+        icon: faWallet,
         navText: "My Wallet",
         navLink: ""
     },
     {
-        iconUrl: "",
-        iconAlt: "",
+        icon: faChartArea,
         navText: "Analytics",
         navLink: ""
     },
     {
-        iconUrl: "",
-        iconAlt: "",
+        icon: faCog,
         navText: "Settings",
         navLink: ""
     },
     {
-        iconUrl: "",
-        iconAlt: "",
+        icon: faQuestion,
         navText: "Help & Center",
         navLink: ""
     }
@@ -62,8 +56,11 @@ export default class EstateMenu extends React.Component {
 
     render () {
         return (
-            <div>
-                <div>Logo</div>
+            <div style={{ width: '200px', padding: '20px', boxSizing: 'border-box' }}>
+                <div style={{ marginBottom: '40px' }}>
+                    <FontAwesomeIcon icon={faSign} style={{ fontSize: '20px', color: '#2265FE', marginRight: '10px' }} />
+                    <span style={{ fontSize: '20px', fontWeight: 'bold' }}>The Estate</span>
+                </div>
                 {navs.map(nav => <EstateEachNav nav={nav} />)}  
             </div>
         )
