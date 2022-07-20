@@ -57,7 +57,7 @@ export default class EstateMenu extends React.Component {
     render () {
         return (
             <div style={{ width: '200px', padding: '20px', boxSizing: 'border-box' }}>
-                <div style={{ marginBottom: '40px' }}>
+                <div style={{ marginBottom: '40px', padding: '10px 0 0 0' }}>
                     <FontAwesomeIcon icon={faSign} style={{ fontSize: '20px', color: '#2265FE', marginRight: '10px' }} />
                     <span style={{ fontSize: '20px', fontWeight: 'bold' }}>The Estate</span>
                 </div>

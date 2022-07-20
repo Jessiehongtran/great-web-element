@@ -11,7 +11,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgb(196, 223, 244);
+    background: #fff;
     -webkit-transition: .4s;
     transition: .4s;
     border-radius: 6px;
@@ -50,12 +50,13 @@
 }
 
 input:checked + .slider {
-    background-color: #FCE6F3;
+    background: #fff;
 }
 
 input:checked + .slider:before {
     content: "Seller";
-    background: #FC4FB8;
+    /* background: #FC4FB8; */
+    background: #2196F3;
 }
 
 input:focus + .slider {
