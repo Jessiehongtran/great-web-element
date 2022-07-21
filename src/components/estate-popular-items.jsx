@@ -34,7 +34,7 @@ export default class EstatePopularItems extends React.Component {
     render() {
         return (
             <div style={{ padding: '40px 0'}}>
-                <div class="top" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px'}}>
+                <div class="top" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '15px'}}>
                     <div class="title-count" style={{ display: 'flex', alignItems: 'center' }}>
                         <h2 class="title" style={{ marginRight: '15px', color: '#393838' }}>Popular of the Week</h2>
                         <span style={{ marginBottom: '-5px', fontSize: '14px', color: '#393838', fontWeight: '500' }}>10 items</span>
