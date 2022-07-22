@@ -63,8 +63,10 @@ export default class EstateMap extends React.Component {
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <h2 style={{ marginRight: '10px' }}>Find the nearest of you</h2>
                     <div style={{ marginBottom: '-5px', color: '#097FDE' }}>
-                        <FontAwesomeIcon icon={faMapMarker} style={{ marginRight: '5px' }}/>
-                        <span>{city}, {state}, {country}</span>
+                        {city || state || country ? <FontAwesomeIcon icon={faMapMarker} style={{ marginRight: '5px' }}/> : null}
+                        {city ? <span>{city}, </span> : null}
+                        {state ? <span>{state}, </span> : null}
+                        {country ? <span>{country}</span> : null}
                     </div>
                 </div>
                 <div ref={this.mapContainer} className="map-container" style={{ height: '400px'}} />

@@ -15,7 +15,7 @@ export default class EstatePopularEachItem extends React.Component {
         const { item } = this.props;
 
         return (
-            <div style={{ margin: '0 20px 20px 0', padding: '15px', borderRadius: '6px', background: '#fff', width: '220px', display: 'flex', justifyContent: 'center' }}>
+            <div style={{ margin: '0 20px 20px 0', padding: '15px', borderRadius: '6px', background: '#fff', width: '220px', display: 'flex', justifyContent: 'center', cursor: 'pointer' }}>
                 <div>
                     <div class="house-image-container" style={{ position: 'relative', width: '100%', height: '150px', objectFit: 'contain' }}>
                         <img class="house" style={{  width: '100%', height: '100%', borderRadius: '6px', boxShadow: 'rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px' }} src={item.image_url} alt={item.name}/>
