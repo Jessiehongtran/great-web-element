@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarker } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import { houses } from '../data/houses';
+import '../styles/estate-map.css';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiaHRyYW4yMTE5NCIsImEiOiJjbDV1MnIwMGwwYndsM2lwZDE5bTVpdmZqIn0.RjMVBRVfulmVRT-gWXnfMQ';
 
@@ -34,7 +35,19 @@ export default class EstateMap extends React.Component {
             zoom: zoom
         })
 
-        houses.forEach(house => {new mapboxgl.Marker({ color: 'red' }).setLngLat(house.lnglat).addTo(map);})
+        houses.forEach(house => {
+            new mapboxgl.Marker({ color: 'red' })
+                        .setLngLat(house.lnglat)
+                        .setPopup(
+                            new mapboxgl.Popup({ offset: 25 })
+                                .setHTML(
+                                    `<div class="popup">
+                                        <h3>${house.name}</h3
+                                        <p>${house.address}</p>
+                                     </div>`
+                                )
+                        )
+                        .addTo(map);})
         
     }
 
@@ -63,7 +76,7 @@ export default class EstateMap extends React.Component {
         const { city, state, country } = this.state;
 
         return (
-            <div>
+            <div style={{ marginBottom: '60px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <h2 style={{ marginRight: '10px' }}>Find the nearest of you</h2>
                     <div style={{ marginBottom: '-5px', color: '#097FDE' }}>
