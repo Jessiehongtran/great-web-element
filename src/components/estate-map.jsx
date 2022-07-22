@@ -3,6 +3,7 @@ import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-load
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarker } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
+import { houses } from '../data/houses';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiaHRyYW4yMTE5NCIsImEiOiJjbDV1MnIwMGwwYndsM2lwZDE5bTVpdmZqIn0.RjMVBRVfulmVRT-gWXnfMQ';
 
@@ -32,6 +33,9 @@ export default class EstateMap extends React.Component {
             center: [lng, lat],
             zoom: zoom
         })
+
+        houses.forEach(house => {new mapboxgl.Marker({ color: 'red' }).setLngLat(house.lnglat).addTo(map);})
+        
     }
 
     getGeoInfo = () => {
