@@ -1,0 +1,16 @@
+.insta-menu-wrapper {
+    width: 200px;
+}
+
+.each-nav {
+    margin: 0;
+    padding: 8px 15px;
+}
+
+.each-nav:hover {
+    background: #D5EDFD;
+    color: #0596F8 ;
+    border-radius: 8px;
+    font-weight: bold;
+    box-sizing: border-box;
+}

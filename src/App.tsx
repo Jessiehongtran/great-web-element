@@ -8,6 +8,7 @@ import Products from './views/products';
 import Profiles from './views/profile-shift';
 import ProductDetail from './views/product-detail';
 import ResponsivePage from './views/responsive-page';
+import Instagram from './views/instagram';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/estate" element={<Estate/>} />
+            <Route path="/instagram" element={<Instagram/>} />
             <Route path="/random" element={<div>
                                       <Wiki />
                                       <Products />
