@@ -40,11 +40,11 @@ export default class InstaFeed extends React.Component {
     render () {
         return (
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex' }}>
-                <div style={{ display: 'flex' }}>
-                    <div style={{ padding: '10px', width: '150px', margin: '10px', borderRadius: '6px'}}>
-                        <b>Insights Overview</b>
-                        <p>You gained 24 more followers compared to May 30 - June 12</p>
-                        <div style={{ background: '#fff' }}>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <div style={{ padding: '10px 10px 10px 0', width: '150px', margin: '10px 10px 10px 0' }}>
+                        <h4 style={{ margin: 0, fontSize: '20px', color: '#067BCB' }}>Insights Overview</h4>
+                        <p style={{ marginTop: '10px' }}>You gained <span style={{ color: '#067BCB', fontWeight: 'bold' }}>24</span> more followers compared to May 30 - June 12</p>
+                        <div style={{ background: '#fff', padding: '8px 10px', borderRadius: '4px', margin: '5px', cursor: 'pointer' }}>
                             <span style={{ marginRight: '10px' }}>Last 14 days</span>
                             <FontAwesomeIcon icon={faAngleDown} />
                         </div>

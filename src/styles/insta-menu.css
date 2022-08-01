@@ -4,7 +4,7 @@
 
 .each-nav {
     margin: 0;
-    padding: 8px 15px;
+    padding: 8px 15px 8px 0;
 }
 
 .each-nav:hover {
