@@ -5,15 +5,15 @@ const images = [
     "https://i.pinimg.com/564x/d5/34/bc/d534bcea27ab0b06de7dda95d6557c13.jpg",
     "https://i.pinimg.com/564x/35/fa/da/35fadaebf3519c6bc8b33a8b4903e5ee.jpg",
     "https://i.pinimg.com/564x/66/b1/8f/66b18fac149ad64a379eaa079c2a16c7.jpg",
-    "https://i.pinimg.com/564x/66/b1/8f/66b18fac149ad64a379eaa079c2a16c7.jpg",
-    "https://i.pinimg.com/564x/66/b1/8f/66b18fac149ad64a379eaa079c2a16c7.jpg"
+    "https://i.pinimg.com/564x/ed/d2/95/edd2950984d5786e9c9893f8eb52a77a.jpg",
+    "https://i.pinimg.com/736x/52/06/6f/52066f9cb2ae53fc9cb4bf19b3b1f3cd.jpg"
 ]
 
 
 export default function InstaRecentPosts (props) {
 
-    const image_width = 250;
-    const total_col = 3;
+    const image_width = 180;
+    const total_col = 4;
     const original_total_width = image_width*total_col;
     let total_width = original_total_width;
 
