@@ -13,10 +13,10 @@ export default class Instagram extends React.Component {
 
     render () {
         return (
-            <div style={{ padding: '20px' }}>
-                <div>
+            <div style={{ display: 'flex', width: '100%', boxSizing: 'border-box', minHeight: '100vh', height: '100%', justifyContent: 'center', background: '#fff' }}>
+                <div className="insta-wrapper" style={{ padding: '20px', width: '200%', maxWidth: '1100px', background: '#F2F2F2' }}>
                     <Header />
-                    <div>
+                    <div style={{display: 'flex', justifyContent: 'space-between', width: '100%' }}>
                         <Menu />
                         <Feed />
                     </div>
