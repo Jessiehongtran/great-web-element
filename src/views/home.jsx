@@ -21,8 +21,18 @@ export default class Home extends React.Component {
                             </Link>
                         </li>
                         <li>
+                            <Link to="/instagram">
+                                Instagram
+                            </Link>
+                        </li>
+                        <li>
                             <Link to="/random">
                                 Random cards
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/darkmode">
+                                Dark Mode
                             </Link>
                         </li>
                         <li>

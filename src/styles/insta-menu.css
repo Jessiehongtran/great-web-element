@@ -3,8 +3,8 @@
 }
 
 .each-nav {
-    margin: 0;
-    padding: 8px 15px 8px 0;
+    margin-left: -10px;
+    padding: 8px 10px;
 }
 
 .each-nav:hover {
