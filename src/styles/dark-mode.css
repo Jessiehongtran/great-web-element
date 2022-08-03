@@ -56,6 +56,9 @@
     bottom: 0;
     -webkit-transition: .4s;
     transition: .4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .mode-input {
