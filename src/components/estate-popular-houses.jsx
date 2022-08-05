@@ -1,6 +1,5 @@
 import React from 'react';
 import EstatePopularEachItem from './estate-popular-each-house';
-import { Link } from 'react-router-dom';
 import { houses } from '../data/houses';
 
 export default class EstatePopularItems extends React.Component {

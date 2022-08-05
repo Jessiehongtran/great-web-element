@@ -49,9 +49,8 @@ export default class Profiles extends React.Component {
 
         return (
             <div className="profiles" >
-                {/* {function(){ console.log('ble'); this.setState({updating: false})}} */}
                 <div className="each-profile" style={{ display: 'flex', alignItems: 'center' }}>
-                    <img style={{ borderRadius: '50%', width: '60px', height: '60px', marginRight: '20px' }} src={person.avatar} />
+                    <img alt="profile placeholder" style={{ borderRadius: '50%', width: '60px', height: '60px', marginRight: '20px' }} src={person.avatar} />
                     <div>
                         <div className="name" style={{fontWeight: 500}} >{person.name}</div>
                         <div className="title" style={{ color: 'grey', marginTop: '5px'}} >{person.title}</div>

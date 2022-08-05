@@ -18,8 +18,8 @@ export default function DarkMode () {
                         <input type="checkbox" className="mode-input"/>
                         <div className="toggle">
                             { dark 
-                            ? <img src="https://www.freeiconspng.com/uploads/moon-icon-32.png" style={{ width: '30px' }}/>
-                            : <img src="https://www.freeiconspng.com/thumbs/sun-icon/sun-icon-31.png" style={{ width: '25px' }}/> }
+                            ? <img src="https://www.freeiconspng.com/uploads/moon-icon-32.png" style={{ width: '30px' }} alt="moon"/>
+                            : <img src="https://www.freeiconspng.com/thumbs/sun-icon/sun-icon-31.png" style={{ width: '25px' }} alt="sun"/> }
                         </div>
                     </div>                    
                 </div>

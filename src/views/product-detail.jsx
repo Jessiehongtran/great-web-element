@@ -36,7 +36,7 @@ export default class ProductDetail extends React.Component {
                     </div>
                     <div className="product-info">
                         <div className="image">
-                            <img className="shampoo" src="https://pngimg.com/uploads/shampoo/shampoo_PNG12.png" alt="product-image" />
+                            <img className="shampoo" src="https://pngimg.com/uploads/shampoo/shampoo_PNG12.png" alt="product" />
                         </div>
                         <div className="detail">
                             <p className="product-category">FACIAL CLEANSER</p>

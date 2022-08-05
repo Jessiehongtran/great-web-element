@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInfo, faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { faInfo } from '@fortawesome/free-solid-svg-icons';
 
 
 export default class InstaStatistic extends React.Component {
@@ -25,7 +25,7 @@ export default class InstaStatistic extends React.Component {
                     </div>
                     <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '15px 0' }}>
                         <span style={{ fontWeight: 'bold', fontSize: '20px' }}>{data.number}</span>
-                        <img src={data.chart_image} style={{ width: '80px' }} />
+                        <img src={data.chart_image} style={{ width: '80px' }} alt="chart" />
                     </div>
                     <a href={data.link} style={{ textDecoration: 'underline', color: '#676767', fontSize: '12px' }} >View Details</a>
                 </div>

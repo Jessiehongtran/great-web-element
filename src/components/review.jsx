@@ -54,7 +54,7 @@ export default class Review extends React.Component {
                         <p>{review.review_source}</p>
                     </div>
                     <div class="readmore">
-                        <a href="">
+                        <a href="#">
                             Read more
                         </a>
                     </div>
