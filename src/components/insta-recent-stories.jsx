@@ -22,7 +22,7 @@ export default class InstaRecentStories extends React.Component {
                 <div className="" style={{ display: 'flex' }}>
                 {stories.map(story => 
                     <div style={{ margin: '0 15px 15px 0'}}>
-                        <img style={{borderRadius: '6px', height: '340px'}} src={story} alt="story image"/>
+                        <img style={{borderRadius: '6px', height: '340px'}} src={story} alt="story"/>
                     </div>)}
                 </div>
             </div>

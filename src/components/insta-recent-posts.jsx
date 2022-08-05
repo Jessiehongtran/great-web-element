@@ -40,7 +40,7 @@ export default function InstaRecentPosts (props) {
                     <div style={{}}> 
                         {col.map(each => 
                         <div className="each-image" style={{ margin: '0 15px 15px 0', width: `${image_width}px` }}>
-                            <img src={each} style={{width: '100%', borderRadius: '6px', }} />
+                            <img alt="post" src={each} style={{width: '100%', borderRadius: '6px', }} />
                         </div>
                         )}
                     </div>
