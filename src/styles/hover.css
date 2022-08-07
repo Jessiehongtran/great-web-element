@@ -1,0 +1,25 @@
+.author {
+    display: none;
+    margin-top: -15px;
+}
+
+.quote {
+    font-size: 24px;
+    text-align: center;
+    max-width: 600px;
+    cursor: pointer
+}
+
+.quote:hover + .author {
+    display: block;
+    transition: width 2s, height 4s;
+    transition-duration: 100ms;
+    transition-timing-function: ease-in-out;
+}
+
+.quote:hover {
+    transition: width 2s, height 4s;
+    transition-timing-function: ease-in-out;
+    transition-duration: 100ms;
+    transform: translateY(-15px); 
+}

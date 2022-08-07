@@ -10,6 +10,7 @@ import ProductDetail from './views/product-detail';
 import ResponsivePage from './views/responsive-page';
 import Instagram from './views/instagram';
 import DarkMode from './views/dark-mode';
+import Hover from './views/hover';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
                                     </div>} />
             <Route path="/oil" element={<ProductDetail/>} />
             <Route path="/reviews" element={<ResponsivePage/>} />
+            <Route path="/hover" element={<Hover/>} />
           </Routes>
       </Router>
     </div>

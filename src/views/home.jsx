@@ -45,6 +45,11 @@ export default class Home extends React.Component {
                                 Sliding reviews
                             </Link>
                         </li>
+                        <li>
+                            <Link to="/hover">
+                                Hover
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             </div>
