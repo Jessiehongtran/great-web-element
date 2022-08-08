@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/slider.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -30,11 +31,26 @@ export default class Slider extends React.Component {
     constructor (props) {
         super (props) 
         this.state = {
-            photo_ind: 0
+            photo_ind: 0,
+            opacity: 1,
+            fadein: true
         }
 
         this.next = this.next.bind(this);
         this.back = this.back.bind(this);
+        this.increaseOpacity = this.increaseOpacity.bind(this);
+    }
+
+    increaseOpacity (curOpacity) {
+        if (curOpacity < 0.9) {
+            curOpacity += 0.1
+            this.setState({ opacity: curOpacity });
+
+            setTimeout(function() {
+                this.increaseOpacity(curOpacity)
+            }.bind(this), 50)
+        } 
+        
     }
 
     next () {
@@ -42,26 +58,34 @@ export default class Slider extends React.Component {
         const { photo_ind} = this.state;
 
         if (photo_ind < photos.length - 1) {
-            this.setState({ photo_ind: photo_ind + 1})
+            this.setState({ photo_ind: photo_ind + 1 })
         } else {
-            this.setState({ photo_ind: 0})
+            this.setState({ photo_ind: 0 })
         }
+
+        let opacity = 0
+        //how to set opacity back to 0
+        this.increaseOpacity(opacity)
     }
 
     back () {
 
-        const { photo_ind} = this.state;
+        const { photo_ind } = this.state;
         
         if (photo_ind >  1) {
-            this.setState({ photo_ind: photo_ind - 1})
+            this.setState({ photo_ind: photo_ind - 1 })
         } else {
-            this.setState({ photo_ind: photos.length - 1})
+            this.setState({ photo_ind: photos.length - 1 })
         }
+
+        let opacity = 0
+        //how to set opacity back to 0
+        this.increaseOpacity(opacity)
     }
     
     render () {
 
-        const { photo_ind } = this.state;
+        const { photo_ind, opacity } = this.state;
 
         return (
             <div className="slider-container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
@@ -69,9 +93,10 @@ export default class Slider extends React.Component {
                     <div onClick={() => this.back()} className="left slider-btn" style={{ cursor: 'pointer', width: '30px', height: '30px', background: 'grey', color: '#fff',  borderRadius: '50%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                         <FontAwesomeIcon icon={faAngleLeft} style={{ fontSize: '20px' }} />
                     </div>
-                    <img src={photos[photo_ind]} alt={`Photo ${photo_ind}`} style={{width: '300px', margin: '0 40px'}} />
+                    <img src={photos[photo_ind]} alt={`Photo ${photo_ind}`} style={{width: '300px', margin: '0 40px', opacity: `${opacity}` }} />
                     <div onClick={() => this.next()} className="right slider-btn" style={{ cursor: 'pointer', width: '30px', height: '30px', background: 'grey', color: '#fff',borderRadius: '50%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                         <FontAwesomeIcon icon={faAngleRight} style={{ fontSize: '20px' }} />
+                        <input type="checkbox" className="slider-check" style={{display: 'none'}} />
                     </div>
                 </div>
             </div>

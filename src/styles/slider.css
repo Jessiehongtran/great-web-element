@@ -1,0 +1,21 @@
+.fadein {
+    animation-name: FadeIn;
+    animation-duration: 3s;
+    transition-timing-function: linear;
+    border-radius: 6px;
+}
+
+.none {
+    
+}
+
+
+@keyframes FadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
