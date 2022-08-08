@@ -50,6 +50,11 @@ export default class Home extends React.Component {
                                 Hover
                             </Link>
                         </li>
+                        <li>
+                            <Link to="/slider">
+                                Slider
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             </div>
