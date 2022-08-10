@@ -55,6 +55,11 @@ export default class Home extends React.Component {
                                 Slider
                             </Link>
                         </li>
+                        <li>
+                            <Link to="/color">
+                                Color Picker
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             </div>

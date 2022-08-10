@@ -12,6 +12,7 @@ import Instagram from './views/instagram';
 import DarkMode from './views/dark-mode';
 import Hover from './views/hover';
 import Slider from './views/slider';
+import ColorPicker from './views/color-picker';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path="/reviews" element={<ResponsivePage/>} />
             <Route path="/hover" element={<Hover/>} />
             <Route path="/slider" element={<Slider/>} />
+            <Route path="/color" element={<ColorPicker/>} />
           </Routes>
       </Router>
     </div>
