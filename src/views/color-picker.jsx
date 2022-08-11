@@ -11,6 +11,7 @@ export default class ColorPicker extends React.Component {
                 { r: 255, g: 0, b: 0},
                 { r: 0, g: 255, b: 0},
                 { r: 0, g: 0, b: 255},
+                { r: 255, g: 255, b: 0},
             ],
             selected_color: {
                 r: 255,
@@ -18,6 +19,21 @@ export default class ColorPicker extends React.Component {
                 b: 0
             }
         }
+    }
+
+    setUpColorOptions () {
+        const options = this.state.color_options;
+        for (let i = 0; i < 10; i++) {
+            const randomR = Math.floor(Math.random()*255)
+            const randomG = Math.floor(Math.random()*255)
+            const randomB = Math.floor(Math.random()*255)
+            options.push({ r: randomR, g: randomG, b: randomB })
+        }
+        this.setState({ color_options: options })
+    }
+
+    componentDidMount () {
+        this.setUpColorOptions()
     }
 
     updateRGB(color) {
@@ -40,25 +56,11 @@ export default class ColorPicker extends React.Component {
         for (let j = 0; j < 30; j++) {
             let row = []
             for (let i = 0; i < 30; i++) {
-                if (selected_color.r === 255) {
-                    row.push({
-                        r: 255 - i*8,
-                        g: 0 + j*8 - i*8,
-                        b: 0 + j*8 - i*8
-                    })
-                } else if (selected_color.g === 255) {
-                    row.push({
-                        r: 0 + j*8 - i*8,
-                        g: 255 - i*8,
-                        b: 0 + j*8 - i*8
-                    })
-                } else if (selected_color.b === 255) {
-                    row.push({
-                        r: 0 + j*8 - i*8,
-                        g: 0 + j*8 - i*8,
-                        b: 255 - i*8
-                    })
-                }
+                row.push({
+                    r: selected_color.r - i*8 + j*8,
+                    g: selected_color.g - i*8 + j*8,
+                    b: selected_color.b - i*8 + j*8
+                })
             }
             colors.push(row)
         }
