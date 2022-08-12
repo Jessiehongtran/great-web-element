@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCopy } from '@fortawesome/free-solid-svg-icons';
 
 export default class ColorPicker extends React.Component {
     constructor (props) {
@@ -17,7 +19,8 @@ export default class ColorPicker extends React.Component {
                 r: 255,
                 g: 0,
                 b: 0
-            }
+            },
+            copySuccess: ''
         }
     }
 
@@ -57,6 +60,16 @@ export default class ColorPicker extends React.Component {
         return "#" + this.componentToHex(r) + this.componentToHex(g) + this.componentToHex(b);
     }
 
+    copyToClipboard = (e) => {
+        this.textArea.select();
+        document.execCommand('copy');
+        e.target.focus();
+        this.setState({ copySuccess: 'Copied!' })
+        setTimeout(function(){
+            this.setState({ copySuccess: '' })
+        }.bind(this), 1000)
+    }
+
     render () {
 
         const { r, g, b, color_options, selected_color } = this.state;
@@ -90,6 +103,8 @@ export default class ColorPicker extends React.Component {
             colors.push(row)
         }
 
+        const hex_value = this.rgbToHex(r,g,b);
+
         return (
             <div className="picker-container" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh'}}>
                 <div className="picker-wrapper" >
@@ -99,10 +114,21 @@ export default class ColorPicker extends React.Component {
                             <div>G: <span>{g >=0 ? g : 0}</span></div>
                             <div>B: <span>{b >=0 ? b : 0}</span></div>
                         </div>
-                        <div className="hex">
+                        <div className="hex" style={{ display: 'flex' }}>
                             <div>
                                 <span>HEX: </span>
-                                <span>{this.rgbToHex(r,g,b)}</span>
+                                <input 
+                                    ref={(text) => this.textArea=text} 
+                                    value={hex_value}
+                                />
+                            </div>
+                            <div style={{ position: 'relative'}}>
+                                <FontAwesomeIcon 
+                                    icon={faCopy} 
+                                    onClick={(e) => this.copyToClipboard(e)} 
+                                    style={{ margin: '0 10px', cursor: 'pointer' }}
+                                />
+                                <span style={{ position: 'absolute', top: '-15px', left: '25px', fontSize: '12px' }}>{this.state.copySuccess}</span>
                             </div>
                         </div>
                     </div>
