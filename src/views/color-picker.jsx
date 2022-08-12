@@ -48,6 +48,15 @@ export default class ColorPicker extends React.Component {
         this.setState({ selected_color: color })
     }
 
+    componentToHex (c) {
+        let hex = c.toString(16);
+        return hex.length == 1 ? "0" + hex : hex;
+    }
+
+    rgbToHex (r, g, b) {
+        return "#" + this.componentToHex(r) + this.componentToHex(g) + this.componentToHex(b);
+    }
+
     render () {
 
         const { r, g, b, color_options, selected_color } = this.state;
@@ -56,11 +65,27 @@ export default class ColorPicker extends React.Component {
         for (let j = 0; j < 30; j++) {
             let row = []
             for (let i = 0; i < 30; i++) {
-                row.push({
-                    r: selected_color.r - i*8 + j*8,
-                    g: selected_color.g - i*8 + j*8,
-                    b: selected_color.b - i*8 + j*8
-                })
+                let r, g, b;
+
+                if (selected_color.r - i*8 + j*8 > 0) {
+                    r = selected_color.r - i*8 + j*8 
+                } else {
+                    r = 0
+                }
+
+                if (selected_color.g - i*8 + j*8 > 0) {
+                    g = selected_color.g - i*8 + j*8 
+                } else {
+                    g = 0
+                }
+
+                if (selected_color.b - i*8 + j*8 > 0) {
+                    b = selected_color.b - i*8 + j*8 
+                } else {
+                    b = 0
+                }
+
+                row.push({ r: r, g: g, b: b })
             }
             colors.push(row)
         }
@@ -69,9 +94,17 @@ export default class ColorPicker extends React.Component {
             <div className="picker-container" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh'}}>
                 <div className="picker-wrapper" >
                     <div style={{ display: 'flex', justifyContent: 'space-around', marginBottom: '10px' }}>
-                        <div>R: <span>{r}</span></div>
-                        <div>G: <span>{g >=0 ? g : 0}</span></div>
-                        <div>B: <span>{b >=0 ? b : 0}</span></div>
+                        <div className="rgb" style={{ display: 'flex', justifyContent: 'space-around', marginBottom: '10px', minWidth: '300px' }}>
+                            <div>R: <span>{r}</span></div>
+                            <div>G: <span>{g >=0 ? g : 0}</span></div>
+                            <div>B: <span>{b >=0 ? b : 0}</span></div>
+                        </div>
+                        <div className="hex">
+                            <div>
+                                <span>HEX: </span>
+                                <span>{this.rgbToHex(r,g,b)}</span>
+                            </div>
+                        </div>
                     </div>
                     <div className="colors" style={{ display: 'flex' }}>
                         <div className="colors-options" style={{ marginRight: '20px' }}>
