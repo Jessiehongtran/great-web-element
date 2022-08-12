@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy } from '@fortawesome/free-solid-svg-icons';
+import '../styles/color-picker.css';
 
 export default class ColorPicker extends React.Component {
     constructor (props) {
@@ -142,13 +143,15 @@ export default class ColorPicker extends React.Component {
                                 </div>
                             )}
                         </div>
-                        <div className="colors-display">
-                        {colors.map(colorRow => 
-                            <div style={{ display: 'flex' }}>
-                            {colorRow.map(color => 
+                        <div className="colors-display" style={{ position: 'relative' }}>
+                        {colors.map((colorRow,r) => 
+                            <div >
+                            {colorRow.map((color,c) => 
                                 <div 
-                                    style={{ backgroundColor: `rgb(${color.r}, ${color.g}, ${color.b})`, width: '20px', height: '20px'}}
+                                    className="color-square"
+                                    style={{ backgroundColor: `rgb(${color.r}, ${color.g}, ${color.b})`,left: `${20*c}px`, top: `${20*r}px` }}
                                     onClick={() => this.updateRGB(color)}
+                            
                                 >
                                 </div>
                             )}
