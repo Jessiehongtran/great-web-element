@@ -93,7 +93,7 @@ export default class Slider extends React.Component {
                     <div onClick={() => this.back()} className="left slider-btn" style={{ cursor: 'pointer', width: '30px', height: '30px', background: 'grey', color: '#fff',  borderRadius: '50%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                         <FontAwesomeIcon icon={faAngleLeft} style={{ fontSize: '20px' }} />
                     </div>
-                    <img src={photos[photo_ind]} alt={`Photo ${photo_ind}`} style={{width: '300px', margin: '0 40px', opacity: `${opacity}` }} />
+                    <img src={photos[photo_ind]} alt={`${photo_ind}`} style={{width: '300px', margin: '0 40px', opacity: `${opacity}` }} />
                     <div onClick={() => this.next()} className="right slider-btn" style={{ cursor: 'pointer', width: '30px', height: '30px', background: 'grey', color: '#fff',borderRadius: '50%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                         <FontAwesomeIcon icon={faAngleRight} style={{ fontSize: '20px' }} />
                         <input type="checkbox" className="slider-check" style={{display: 'none'}} />

@@ -19,8 +19,6 @@ export default class Hover extends React.Component {
 
     render () {
 
-        const { show } = this.state;
-
         return (
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', background: '#000', color: '#fff', minHeight: '100vh', padding: '20px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
